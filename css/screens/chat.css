@@ -1,0 +1,221 @@
+#chat-screen {
+    /* background-color: var(--chat-background-color); */
+    background-image: url('https://www.wallpapertip.com/wmimgs/28-284845_spirited-away-wallpaper-train.png');
+    background-size: 100vw 100vh;
+    background-attachment: fixed;
+    height: 100vh;
+}
+
+.main-chat {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* animation: fadeIn 0.8s linear; */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.chat__timestamp {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    padding: 10px 15px;
+    border-radius: 25px;
+    margin-bottom: 25px;
+    animation: fadeIn 0.8s linear;
+}
+
+.message-row {
+    width: 100%;
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.message-row img {
+    width: 50px;
+    height: 50px;
+    border-radius: 40%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.message__author {
+    opacity: 0.8;
+    font-size: 15px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.message__info {
+    display: flex;
+    align-items: flex-end;
+}
+
+.message__bubble {
+    background-color: #63578B;
+    color: white;
+    font-size: 18px;
+    padding: 12px 13px;
+    border-radius: 15px;
+    border-top-left-radius: 0px; /* 왼쪽 상단 모서리의 border-radius 없애기 */
+    margin-right: 5px;
+}
+
+.message__time {
+    opacity: 0.8;
+    font-size: 13px;
+}
+
+.message-row--own {
+    justify-content: flex-end;
+}
+
+.message-row--own .message__bubble {
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 2px solid #63578B;
+    color: black;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 15px;
+    margin-right: 0px;
+    margin-left: 5px;
+}
+
+.message-row--own .message__info {
+    flex-direction: row-reverse; /* flex container 안에서 message-row--own를 기준으로 순서를 바꿀 수 있음 */
+}
+
+@keyframes fadeInFriend {
+    from {
+        transform: translateX(-10px);
+        opacity: 0;
+    }
+
+    to {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+.message-row--friend1 {
+    animation: fadeInFriend 0.8s linear;
+}
+
+.message-row--friend2 {
+    opacity: 0;
+    animation: fadeInFriend 0.8s linear;
+    animation-delay: 1.4s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInOwn {
+    from {
+        transform: translateX(10px);
+        opacity: 0;
+    }
+
+    to {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+.message-row--own {
+    opacity: 0;
+    animation: fadeInOwn 0.8s linear;
+    animation-delay: 0.6s;
+    animation-fill-mode: forwards; /* 애니메이션 적용 후 스타일이 적용 */
+}
+
+.reply {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 25px;
+    align-items: center;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out;
+}
+
+.reply .reply__column:first-child {
+    width: 10%;
+}
+
+.reply .reply__column:last-child {
+    width: 90%;
+    position: relative;
+}
+
+.reply i {
+    opacity: 0.5;
+}
+
+.reply input {
+    padding: 15px;
+    width: 95%;
+    border: var(--main-border);
+    border-radius: 30px;
+    transition: all 0.3s ease-in-out;
+}
+
+.reply__column:last-child > i,
+.reply__column:last-child button {
+    position: absolute;
+    right: -8px;
+    top: 3px;
+}
+
+.reply__column:last-child > i {
+    right: 40px;
+    top: 7px;
+}
+
+.reply__column button {
+    background-color: #C0C6E9;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.reply__column button i {
+    opacity: 1;
+}
+
+.reply__column button:focus,
+.reply__column button:active {
+    outline: none;
+}
+
+.reply .reply__column:first-child,
+.reply .fa-grin-squint,
+.reply button {
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* reply:focus-within을 사용해 reply 내부에 focus된 엘리맨트가 있는지 확인 */
+.reply:focus-within .reply__column:first-child,
+.reply:focus-within .fa-grin-squint,
+.reply:focus-within button {
+    opacity: 0;
+}
+
+.reply input:focus {
+    width: 88vw;
+    transform: translateX(-13%) translateY(-80px);
+}
+
+.reply:focus-within {
+    transform: translateY(80px);
+}

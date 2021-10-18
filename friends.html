@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends - Kokoa Clone</title>
+</head>
+<body>
+    <div class="status-bar">
+        <div class="status-bar__column">
+            <span>No Service</span>
+            <i class="fas fa-wifi"></i>
+        </div>
+        <div class="status-bar__column">
+            <span>18:43</span>
+        </div>
+        <div class="status-bar__column">
+            <span>110%</span>
+            <i class="fas fa-battery-full fa-lg"></i> <!-- fa-lg 어떤 아이콘도 large사이즈로 만들어주는 코드 -->
+            <i class="fas fa-bolt"></i>
+        </div>
+    </div>
+
+    <header class="screen-header">
+        <h1 class="screen-header__title">Friends</h1>
+        <div class="screen-header__icons">
+            <span><i class="fas fa-search fa-lg"></i></span>
+            <span><i class="fas fa-music fa-lg"></i></span>
+            <a href="settings.html">
+                <span><i class="fas fa-cog fa-lg"></i></span>
+                <span class="badge-dot"></span>
+            </a>
+        </div>
+    </header>
+
+    <a id="friends-display-link">
+        <i class="fas fa-info-circle"></i> Friends' Names Display <i class="fas fa-chevron-right fa-xs"></i>
+    </a>
+
+    <main class="friends-screen">
+        <div class="user-component">
+            <!-- vsc단축키 .user-component__column*2 .을 붙이면 clss이름으로 생성 -->
+            <!-- div를 좌측용 하나, 우측용 하나씩 생성 -->
+            <div class="user-component__column">
+                <img src="https://ww.namu.la/s/0d21781052e2d0ccecb8e0a7a5fdcb53d8b3a709674e58fc7e33ab001a4bc0b33114b5583651e63bb4364b8e2a56d77ff443fbd8770024e76d66cb132367647eba4643a50adc6476b0df99c5e86cf0f8930f8ee33a662697c84360688e49e733" class="user-component__avatar user-component__avatar--xl" />
+                <div class="user-component__text">
+                    <h4 class="user-component__title">Chihiro</h4>
+                </div>
+            </div>
+            <div class="user-component__column"></div>
+        </div>
+        <div class="friends-screen__channel">
+            <div class="friends-screen__channel-header">
+                <span>Channel</span>
+                <i class="fas fa-chevron-up fa-xs"></i>
+            </div>
+            <div class="user-component">
+                <div class="user-component__column">
+                    <img src="https://t1.kakaocdn.net/kakaocorp/kakaocorp/admin/64d0623a017800001.png" class="user-component__avatar user-component__avatar--sm" />
+                    <div class="user-component__text">
+                        <h4 class="user-component__title user-component__title--not-bold">Channel</h4>
+                    </div>
+                </div>
+                <div class="user-component__column">
+                    <!-- chat화면을 위해 flex-direction: column으로 user-component__column의 주축 방향을 바꿈
+                    div안으로 넣어 내용이 display: flex의 영향권에서 벗어나도록 함 -->
+                    <div>
+                        <span>2</span>
+                        <i class="fas fa-chevron-right fa-xs"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="friends-screen__channel">
+            <div class="friends-screen__channel-header">
+                <span>Friends</span>
+                <i class="fas fa-chevron-up fa-xs"></i>
+            </div>
+            <div class="user-component">
+                <div class="user-component__column">
+                    <img src="https://ww.namu.la/s/13f4bc2d2b7bedc7ae5593b3ff57a5b9a6cfb53f550ca5f7f4f1b7e0091ef684cb467bb43844cc5eb80dffcbd628fff303115405b03d0be306ded452d9f1bc68cdfe9191d757161022525db8a614a7750a68910e24aa0d6291c1a58b48f997ba" class="user-component__avatar user-component__avatar--sm" />
+                    <div class="user-component__text">
+                        <h4 class="user-component__title user-component__title--not-bold">Haku</h4>
+                    </div>
+                </div>
+                <div class="user-component__column"></div>
+            </div>
+            <div class="user-component friends-screen__friend">
+                <div class="user-component__column">
+                    <img src="https://static-storychat.pstatic.net/2020/6/21/39/2755189_gdmjl8m6ck0f0.jpg" class="user-component__avatar user-component__avatar--sm" />
+                    <div class="user-component__text">
+                        <h4 class="user-component__title user-component__title--not-bold">Kaonashi</h4>
+                    </div>
+                </div>
+                <div class="user-component__column"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- vsc단축키 nav>ul>li*4>a Tab키 누르면서 정보 입력 -->
+    <nav class="nav">
+        <ul class="nav__list">
+            <li class="nav__btn">
+                <a class="nav__link" href="friends.html"><i class="fas fa-user fa-2x"></i></a></li>
+            <li class="nav__btn">
+                <a class="nav__link" href="chats.html">
+                    <span class="nav__notification badge">2</span>
+                    <i class="far fa-comment fa-2x"></i>
+                </a>
+            </li>
+            <li class="nav__btn">
+                <a class="nav__link" href="find.html"><i class="fas fa-search fa-2x"></i></a></li>
+            <li class="nav__btn">
+                <a class="nav__link" href="more.html">
+                    <span class="nav__notification-dot"></span>
+                    <i class="fas fa-ellipsis-h fa-2x"></i>
+                </a></li>
+        </ul>
+    </nav>
+
+    <div id="no-mobile">
+        <span>Your screen is too big..😥😥</span>
+    </div>
+
+    <script script src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous"></script>
+</body>
+</html>
